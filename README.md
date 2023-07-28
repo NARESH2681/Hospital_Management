@@ -23,3 +23,10 @@ Allow patients to request appointments with their preferred doctors based on the
 Provide a scheduling system that prevents conflicting appointments for doctors.
 View and manage all upcoming appointments.
 Reschedule or cancel appointments as per the availability and requirements.
+
+Technologies Used:
+
+HTML, CSS, and JavaScript for front-end development and user interface.
+Bootstrap and jQuery for responsive and interactive design elements.
+MySQL or Oracle database for data storage and retrieval.
+Tomcat for server-side scripting and handling CRUD operations.
