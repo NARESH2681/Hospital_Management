@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PatientView</title>
+    <link rel="stylesheet" href="home.css">
+ <style>
+        /* Internal CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'poppins', sans-serif;
+        }
+
+        body {
+           background-image: linear-gradient(
+  45deg,
+  hsl(54deg 87% 91%) 0%,
+  hsl(62deg 60% 82%) 10%,
+  hsl(70deg 56% 74%) 20%,
+  hsl(79deg 54% 67%) 30%,
+  hsl(87deg 53% 60%) 40%,
+  hsl(97deg 52% 54%) 50%,
+  hsl(158deg 100% 37%) 60%,
+  hsl(187deg 100% 38%) 70%,
+  hsl(205deg 100% 50%) 80%,
+  hsl(213deg 100% 50%) 90%,
+  hsl(242deg 100% 50%) 100%
+);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 150vh;
+        }
+
+        header {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 99;
+        }
+
+        .logo {
+            font-size: 2em;
+            color: black;
+            user-select: none;
+        }
+
+        /* it used between the home to admin navigation */
+        .navigation a {
+            position: relative;
+            font-size: 1.1em;
+            color: black;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 40px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .navigation a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 100%;
+            height: 3px;
+            background: black;
+            border-radius: 5px;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform 0.2s;
+        }
+
+        .navigation a:hover::after {
+            transform-origin: left;
+            transform: scaleX(1);
+        }
+
+        .welcome {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .info {
+            padding: 20px;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .text {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .image img {
+            max-width: 50%;
+            height: auto;
+            border-radius: 30%;
+        }
+
+        .section:nth-child(even) .text {
+            order: 2;
+        }
+
+        .section:nth-child(even) .image {
+            order: 1;
+            text-align: right;
+        }
+
+        @media screen and (max-width: 768px) {
+            header {
+                padding: 20px 30px;
+            }
+
+            .logo {
+                font-size: 1.5em;
+            }
+
+            .navigation a {
+                margin-left: 20px;
+                font-size: 1em;
+            }
+
+            .welcome {
+                margin-top: 20px;
+                font-size: 1.5em;
+            }
+
+            .text,
+            .image img {
+                max-width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            header {
+                padding: 10px 20px;
+            }
+
+            .logo {
+                font-size: 1.2em;
+            }
+
+            .navigation a {
+                margin-left: 10px;
+                font-size: 0.9em;
+            }
+
+            .welcome {
+                margin-top: 10px;
+                font-size: 1.2em;
+            }
+        }
+        
+        @keyframes moveText {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        #am {
+            animation: moveText 2s infinite;
+        }
+
+    </style>
+</style>
+</head>
+<body>
+    <header>
+        <h2 class="logo">Hospital Management</h2>
+        <nav class="navigation">
+         
+            
+            
+            <a href="doctor_profile.jsp"><b>Doctors Details</b></a>
+            <a href="home.html"><b>Logout</b></a>
+        </nav>
+    </header>
+    <div class="welcome" style="text-align: center;">
+        <h1 id="am">Welcome To Patient Home Page</h1>
+       
+    </div>
+    <br>
+    <br>
+    <div class="info">
+        <div class="section">
+            <div class="text"><br>
+                <br>
+                <br>
+                <h1><b>They store health information in one place.</b></h1>
+                <p><b>Depending on the extent of the provider’s practice, patient portals hold everything from yearly healthcare expenditures to eyeglasses prescriptions and lab results.
+
+                    No more shuffling papers to find receipts or records after a visit!</b></p>
+            </div>
+            
+        </div>
+        <div class="section">
+            <div class="text">
+                <h1>Are patient portals safe?</h1>
+                <p></p><b>Of patient portal benefits and challenges, however, probably the biggest concern is the security of a patient’s sensitive medical data. Your office cannot simply set up a free website and expect patients to allow their medical data to be posted there!
+
+                    But good news: patient portals are safe. Governed by the rules of HIPAA regarding sensitive health information, these portals are designed for security and hosted on a secure site. Choosing a webhost that offers a secure, HIPPA-compliant service with frequent upgrades, responsive speeds, and limited downtime can go a long way towards encouraging patients to use your patient portal.</b></p>
+            </div>
+           
+        </div>
+    </div>
+    
+</body>
+</html>

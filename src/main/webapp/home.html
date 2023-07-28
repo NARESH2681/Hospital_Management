@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital-page</title>
+    <!-- External css -->
+    <style>
+        /* Internal CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'poppins', sans-serif;
+        }
+
+        body {
+            background-image: linear-gradient(
+                45deg,
+                hsl(240deg 100% 20%) 0%,
+                hsl(289deg 100% 21%) 11%,
+                hsl(315deg 100% 27%) 22%,
+                hsl(329deg 100% 36%) 33%,
+                hsl(337deg 100% 43%) 44%,
+                hsl(357deg 91% 59%) 56%,
+                hsl(17deg 100% 59%) 67%,
+                hsl(34deg 100% 53%) 78%,
+                hsl(45deg 100% 50%) 89%,
+                hsl(55deg 100% 50%) 100%
+            );
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+
+        header {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 99;
+        }
+
+        .logo {
+            font-size: 2em;
+            color: black;
+            user-select: none;
+        }
+
+        /* it used between the home to admin navigation */
+        .navigation a {
+            position: relative;
+            font-size: 1.1em;
+            color: black;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 40px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .navigation a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 100%;
+            height: 3px;
+            background: black;
+            border-radius: 5px;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform 0.2s;
+        }
+
+        .navigation a:hover::after {
+            transform-origin: left;
+            transform: scaleX(1);
+        }
+
+        .welcome {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .info {
+            padding: 20px;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .text {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .image img {
+            max-width: 50%;
+            height: auto;
+            border-radius: 30%;
+        }
+
+        .section:nth-child(even) .text {
+            order: 2;
+        }
+
+        .section:nth-child(even) .image {
+            order: 1;
+            text-align: right;
+        }
+
+        /* Media Queries */
+
+        @media screen and (max-width: 1024px) {
+            header {
+                padding: 20px 50px;
+            }
+
+            .logo {
+                font-size: 1.5em;
+            }
+
+            .navigation a {
+                margin-left: 30px;
+                font-size: 1em;
+            }
+
+            .welcome {
+                margin-top: 20px;
+                font-size: 1.5em;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            header {
+                padding: 20px 30px;
+            }
+
+            .logo {
+                font-size: 1.5em;
+            }
+
+            .navigation a {
+                margin-left: 20px;
+                font-size: 1em;
+            }
+
+            .welcome {
+                margin-top: 20px;
+                font-size: 1.5em;
+            }
+
+            .text,
+            .image img {
+                max-width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            header {
+                padding: 10px 20px;
+            }
+
+            .logo {
+                font-size: 1.2em;
+            }
+
+            .navigation a {
+                margin-left: 10px;
+                font-size: 0.9em;
+            }
+
+            .welcome {
+                margin-top: 10px;
+                font-size: 1.2em;
+            }
+        }
+        
+        @keyframes moveText {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        #am {
+            animation: moveText 2s infinite;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h2 class="logo">Hospital Management</h2>
+        <nav class="navigation">
+            <a href="hospital_login.jsp"><b>Hospital</b></a>
+            <a href="patient_login.jsp"><b>Patient</b></a>
+            <a href="doctor_login.jsp"><b>Doctor</b></a>
+        </nav>
+    </header>
+    <!-- Inline CSS for  text  -->
+    <div class="welcome">
+        <h1 id="am">Welcome to Hospital Management</h1>
+    </div>
+    <br>
+    <br>
+    <div class="info">
+        <div class="section">
+            <div class="text">
+                <h1>Improves Patient’s Experience</h1>
+                <p>Patients will now have a better experience from the time they register until they are discharged or their appointment concludes. Caresoft will assist the lab management system, and there will be no need to be concerned about previous and current patients’ medical records.</p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="text">
+                <h1>Improve Data Security</h1>
+                <p>Now, if staff management is simple, Caresoft’s various security levels will have a direct impact on employee attendance and shift timing. The clinic management system will act as a data collector, recording patient information and encrypting medical records so that patients can receive them via SMS and Whatsapp.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
